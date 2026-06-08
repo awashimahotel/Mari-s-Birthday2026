@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="robots" content="noindex, nofollow">
+<script>
+  const password = prompt("パスワードを入力してください：");
+  if (password !== "シャイニー") { // ←ここに好きなパスワードを設定
+    alert("パスワードが違います。");
+    document.write("<h1>アクセス権限がありません。</h1>");
+    window.stop(); // ページの読み込みを強制ストップ
+  }
+</script>
+<title>鞠莉お嬢様からのメッセージ 🌟</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  :root {
+    --gold: #f5c842;
+    --gold-light: #ffe98a;
+    --gold-dark: #c8960a;
+    --pink: #ff7eb3;
+    --purple: #a259f7;
+    --text-dark: #3a1a5e;
+    --white: #ffffff;
+  }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: #1a0533;
+    background-image:
+      radial-gradient(ellipse at 20% 20%, rgba(162,89,247,0.25) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 80%, rgba(255,126,179,0.2) 0%, transparent 60%),
+      radial-gradient(ellipse at 50% 50%, rgba(245,200,66,0.08) 0%, transparent 70%);
+    font-family: 'Noto Sans JP', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.2rem 3rem;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle var(--dur, 3s) ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+    opacity: 0;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1); }
+  }
+
+  .sparkle {
+    position: fixed;
+    pointer-events: none;
+    animation: sparkle-anim 1.2s ease-out forwards;
+    z-index: 999;
+    font-size: 1.2rem;
+  }
+
+  @keyframes sparkle-anim {
+    0% { opacity: 1; transform: translate(0,0) scale(1); }
+    100% { opacity: 0; transform: translate(var(--tx,20px), var(--ty,-40px)) scale(0.3); }
+  }
+
+  .container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.8rem;
+  }
+
+  /* ヘッダー */
+  .header { text-align: center; }
+
+  .header-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light), var(--gold));
+    color: var(--text-dark);
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    padding: 0.4rem 1.4rem;
+    border-radius: 99px;
+    margin-bottom: 1.1rem;
+    box-shadow: 0 0 20px rgba(245,200,66,0.5);
+  }
+
+  .title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+    font-weight: 700;
+    color: var(--white);
+    text-shadow: 0 0 30px rgba(245,200,66,0.6), 0 0 60px rgba(162,89,247,0.4);
+    line-height: 1.45;
+    margin-bottom: 0.7rem;
+  }
+
+  .title span.gold { color: var(--gold-light); }
+
+  .subtitle {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+  }
+
+  /* カード */
+  .card {
+    width: 100%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(245,200,66,0.35);
+    border-radius: 20px;
+    padding: 2.2rem 1.8rem;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 0 0 1px rgba(245,200,66,0.1) inset, 0 20px 60px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), var(--pink), var(--purple), transparent);
+  }
+
+  .card-icon { text-align: center; font-size: 2.8rem; margin-bottom: 1.2rem; display: block; }
+
+  .card-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.1rem;
+    color: var(--gold-light);
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-desc {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.65);
+    text-align: center;
+    line-height: 1.75;
+    margin-bottom: 1.6rem;
+  }
+
+  /* ===== 入力エリア（カスタムマスク方式） ===== */
+  .input-wrapper {
+    position: relative;
+    margin-bottom: 1.2rem;
+  }
+
+  .input-label {
+    display: block;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5rem;
+  }
+
+  /*
+   * 実際の入力欄：type="text" + IME=日本語
+   * visually-hidden にして、その上にマスク表示レイヤーを重ねる
+   */
+  .real-input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
+    cursor: text;
+    font-size: 16px; /* iOS自動ズーム防止 */
+    border: none;
+    background: transparent;
+    caret-color: transparent;
+  }
+
+  /* マスク表示レイヤー（目に見える入力欄） */
+  .mask-display {
+    width: 100%;
+    min-height: 54px;
+    padding: 0.85rem 3.2rem 0.85rem 1.2rem;
+    background: rgba(255,255,255,0.08);
+    border: 1.5px solid rgba(245,200,66,0.3);
+    border-radius: 12px;
+    color: white;
+    font-size: 1.25rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.18em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+    cursor: text;
+    user-select: none;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .mask-display.placeholder-mode {
+    color: rgba(255,255,255,0.3);
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+  }
+
+  .mask-display.focused {
+    border-color: var(--gold);
+    background: rgba(245,200,66,0.08);
+    box-shadow: 0 0 0 3px rgba(245,200,66,0.15);
+  }
+
+  .mask-display.error-state {
+    border-color: #ff6b6b;
+    background: rgba(255,107,107,0.08);
+    animation: shake 0.4s ease;
+  }
+
+  /* カーソル点滅 */
+  .mask-display.focused::after {
+    content: '|';
+    color: var(--gold);
+    animation: blink 1s step-end infinite;
+    margin-left: 2px;
+    font-weight: 300;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  /* 入力欄コンテナ（相対位置の親） */
+  .input-field-container {
+    position: relative;
+  }
+
+  @keyframes shake {
+    0%,100% { transform: translateX(0); }
+    20% { transform: translateX(-8px); }
+    40% { transform: translateX(8px); }
+    60% { transform: translateX(-5px); }
+    80% { transform: translateX(5px); }
+  }
+
+  /* 表示/非表示ボタン */
+  .toggle-visibility {
+    position: absolute;
+    right: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(255,255,255,0.45);
+    transition: color 0.2s;
+    padding: 0.4rem;
+    z-index: 3;
+    line-height: 1;
+    touch-action: manipulation;
+  }
+
+  .toggle-visibility svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: color 0.2s;
+}
+
+  .toggle-visibility:hover, .toggle-visibility:active { color: var(--gold); }
+
+  /* 送信ボタン */
+  .btn-submit {
+    width: 100%;
+    padding: 1.05rem;
+    background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 50%, var(--gold-light) 100%);
+    border: none;
+    border-radius: 14px;
+    color: var(--text-dark);
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(245,200,66,0.35);
+    letter-spacing: 0.1em;
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .btn-submit::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+  }
+
+  .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(245,200,66,0.5); }
+  .btn-submit:hover::before { transform: translateX(100%); }
+  .btn-submit:active { transform: scale(0.98); }
+
+  /* エラーメッセージ */
+  .error-msg {
+    display: none;
+    background: rgba(255,107,107,0.15);
+    border: 1px solid rgba(255,107,107,0.4);
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    color: #ffb3b3;
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: 1rem;
+    line-height: 1.65;
+  }
+
+  .error-msg.show { display: block; animation: fadeIn 0.3s ease; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ヒント */
+  .hint-area { margin-top: 1.2rem; text-align: center; }
+
+  .hint-toggle {
+    background: none;
+    border: 1px solid rgba(162,89,247,0.45);
+    color: rgba(162,89,247,0.9);
+    font-size: 0.82rem;
+    padding: 0.5rem 1.3rem;
+    border-radius: 99px;
+    cursor: pointer;
+    transition: all 0.2s;
+    touch-action: manipulation;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  .hint-toggle:active { background: rgba(162,89,247,0.15); }
+
+  .hint-text {
+    display: none;
+    margin-top: 0.8rem;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.75;
+  }
+
+  .hint-text.show { display: block; animation: fadeIn 0.3s ease; }
+
+  /* 成功画面 */
+  #success-screen { display: none; width: 100%; flex-direction: column; align-items: center; gap: 1.5rem; }
+  #success-screen.show { display: flex; }
+
+  .success-card {
+    width: 100%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(245,200,66,0.5);
+    border-radius: 20px;
+    padding: 2.2rem 1.8rem;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 60px rgba(245,200,66,0.18);
+  }
+
+  .success-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--pink), var(--purple), var(--gold));
+    background-size: 200%;
+    animation: shimmer 2s linear infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  .success-emoji { font-size: 3.2rem; display: block; margin-bottom: 0.9rem; animation: bounce 1.2s ease infinite alternate; }
+
+  @keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+  }
+
+  .success-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(1.2rem, 5vw, 1.7rem);
+    color: var(--gold-light);
+    margin-bottom: 0.7rem;
+    text-shadow: 0 0 20px rgba(245,200,66,0.45);
+  }
+
+  .success-message {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.85;
+    margin-bottom: 1.8rem;
+  }
+
+  /* 音声プレイヤー */
+  .audio-section {
+    width: 100%;
+    background: rgba(0,0,0,0.28);
+    border: 1px solid rgba(245,200,66,0.22);
+    border-radius: 14px;
+    padding: 1.4rem 1.2rem;
+  }
+
+  .audio-label {
+    font-size: 0.78rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    display: block;
+    text-align: center;
+  }
+
+  .audio-player-wrap { display: flex; align-items: center; gap: 1rem; }
+
+  .play-btn {
+    width: 54px;
+    height: 54px;
+    min-width: 54px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    transition: transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(245,200,66,0.4);
+    color: var(--text-dark);
+    touch-action: manipulation;
+  }
+
+  .play-btn:active { transform: scale(0.93); }
+
+  .audio-controls { flex: 1; display: flex; flex-direction: column; gap: 0.45rem; }
+
+  .audio-title-text { font-size: 0.86rem; color: rgba(255,255,255,0.8); font-weight: 700; }
+
+  .progress-bar-wrap {
+    width: 100%;
+    height: 6px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    touch-action: none;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold-dark), var(--gold));
+    border-radius: 4px;
+    width: 0%;
+    transition: width 0.1s linear;
+  }
+
+  .audio-time { font-size: 0.74rem; color: rgba(255,255,255,0.4); }
+
+  .audio-note {
+    margin-top: 1rem;
+    font-size: 0.76rem;
+    color: rgba(255,255,255,0.38);
+    text-align: center;
+    line-height: 1.65;
+  }
+
+  .deco-border {
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(245,200,66,0.4), transparent);
+    margin: 0 auto;
+  }
+
+  .logo-area {
+    text-align: center;
+    color: rgba(255,255,255,0.22);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    padding-top: 0.3rem;
+  }
+
+  /* スマホ向け追加調整 */
+  @media (max-width: 480px) {
+    body { padding: 1.5rem 1rem 2.5rem; }
+    .card, .success-card { padding: 1.8rem 1.2rem; border-radius: 16px; }
+    .btn-submit { font-size: 0.95rem; padding: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="stars" id="starsContainer"></div>
+
+<div class="container">
+
+  <div class="header">
+    <div class="header-badge">✦ HAPPY BIRTHDAY MARI ✦</div>
+    <h1 class="title">鞠莉お嬢様からの<br><span class="gold">特別なメッセージ</span></h1>
+    <p class="subtitle">謎解きを制覇した、あなただけへ…</p>
+  </div>
+
+  <div id="login-screen" style="width:100%">
+    <div class="card">
+      <span class="card-icon">🔐</span>
+      <h2 class="card-title">パスワードを入力してね！</h2>
+      <p class="card-desc">
+        謎解きで集めた文字を並べると…<br>
+        マリーからのメッセージが読めるはずよ！
+      </p>
+
+      <div class="input-wrapper">
+        <label class="input-label" for="realInput">🗝️ パスワード</label>
+        <div class="input-field-container">
+          <!-- 見えない本物の入力欄 (type=text で日本語IME有効) -->
+          <input
+            type="text"
+            id="realInput"
+            class="real-input"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="none"
+            spellcheck="false"
+            inputmode="text"
+            maxlength="30"
+            aria-label="パスワード入力"
+          />
+          <!-- 見えるマスク表示 -->
+          <div class="mask-display placeholder-mode" id="maskDisplay">
+            ここをタップして入力
+          </div>
+          <!-- 表示/非表示ボタン -->
+           <button class="toggle-visibility" id="toggleBtn" type="button" aria-label="表示切替">
+  <svg id="iconShow" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+    <circle cx="12" cy="12" r="3"/>
+  </svg>
+  <svg id="iconHide" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/>
+    <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>
+    <line x1="1" y1="1" x2="23" y2="23"/>
+  </svg>
+</button>
+        </div>
+      </div>
+
+      <button class="btn-submit" id="submitBtn" type="button">
+        ✨ メッセージを確認する ✨
+      </button>
+
+      <div class="error-msg" id="errorMsg">
+        😢 パスワードが違うみたい…<br>
+        もう一度、謎解きの答えを確かめてみてね！
+      </div>
+
+      <div class="hint-area">
+        <button class="hint-toggle" id="hintToggle" type="button">ヒントを見る</button>
+        <p class="hint-text" id="hintText">
+          謎10の答えをAqoursがライブ前に点呼する順番で並べると…<br>
+          「1,2,3,4,5,6,7,8,9！ 0から1へ！ Aqours！サンシャイン!!」の順よ！<br>
+          最初の4文字はカタカナらしいわね。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="success-screen">
+    <div class="success-card">
+      <span class="success-emoji">🌟</span>
+      <h2 class="success-title">正解！おめでとう！</h2>
+      <p class="success-message">
+        謎解きコンプリートおめでとう！<br>
+        マリーズバースデーに来てくれて<br>
+        本当にありがとう！<br><br>
+        マリーから、あなただけへの特別なメッセージを聴いてね♪
+      </p>
+
+      <div class="deco-border" style="margin-bottom:1.5rem"></div>
+
+      <div class="audio-section">
+        <span class="audio-label">🎵 鞠莉お嬢様からのメッセージ</span>
+        <div class="audio-player-wrap">
+          <button class="play-btn" id="playBtn" type="button" aria-label="再生">▶</button>
+          <div class="audio-controls">
+            <div class="audio-title-text">Special Message from Mari</div>
+            <div class="progress-bar-wrap" id="progressWrap">
+              <div class="progress-bar-fill" id="progressFill"></div>
+            </div>
+            <div class="audio-time" id="audioTime">0:00 / 0:00</div>
+          </div>
+        </div>
+        <p class="audio-note">
+          <!--※ 音声ファイルを「mari_message.mp3」という名前で<br>
+          このHTMLファイルと同じフォルダに入れてください。-->
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="logo-area">©2017 PLIS</div>
+
+</div>
+
+<script>
+  // 星を生成
+  const starsContainer = document.getElementById('starsContainer');
+  for (let i = 0; i < 70; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    const size = Math.random() * 3 + 1;
+    star.style.cssText = `width:${size}px;height:${size}px;left:${Math.random()*100}%;top:${Math.random()*100}%;--dur:${Math.random()*3+2}s;--delay:${Math.random()*4}s;`;
+    starsContainer.appendChild(star);
+  }
+
+  // ===== パスワード入力（カスタムマスク実装） =====
+  const CORRECT_PASSWORD = 'ゼッタイわすれない';
+
+  const realInput   = document.getElementById('realInput');
+  const maskDisplay = document.getElementById('maskDisplay');
+  const toggleBtn   = document.getElementById('toggleBtn');
+  const submitBtn   = document.getElementById('submitBtn');
+  const errorMsg    = document.getElementById('errorMsg');
+  const hintToggle  = document.getElementById('hintToggle');
+  const hintText    = document.getElementById('hintText');
+  const loginScreen = document.getElementById('login-screen');
+  const successScreen = document.getElementById('success-screen');
+
+  let isRevealed = false;
+
+  // マスク表示を更新
+  function updateMask() {
+    const val = realInput.value;
+    if (val.length === 0) {
+      maskDisplay.textContent = 'ここをタップして入力';
+      maskDisplay.classList.add('placeholder-mode');
+    } else {
+      maskDisplay.classList.remove('placeholder-mode');
+      maskDisplay.textContent = isRevealed ? val : '●'.repeat(val.length);
+    }
+  }
+
+  // 入力イベント（変換確定前も含む）
+  realInput.addEventListener('input', () => {
+    updateMask();
+    maskDisplay.classList.remove('error-state');
+    errorMsg.classList.remove('show');
+  });
+
+  // マスク欄をタップ → 実際のinputにフォーカス
+  maskDisplay.addEventListener('click', () => realInput.focus());
+  maskDisplay.addEventListener('touchend', (e) => { e.preventDefault(); realInput.focus(); });
+
+  // フォーカス状態の反映
+  realInput.addEventListener('focus', () => maskDisplay.classList.add('focused'));
+  realInput.addEventListener('blur',  () => maskDisplay.classList.remove('focused'));
+
+// 表示/非表示トグル
+const iconShow = document.getElementById('iconShow');
+const iconHide = document.getElementById('iconHide');
+toggleBtn.addEventListener('click', () => {
+  isRevealed = !isRevealed;
+  iconShow.style.display = isRevealed ? 'none' : 'block';
+  iconHide.style.display = isRevealed ? 'block' : 'none';
+  updateMask();
+  realInput.focus();
+});
+
+  // ヒント
+  hintToggle.addEventListener('click', () => {
+    hintText.classList.toggle('show');
+    hintToggle.textContent = hintText.classList.contains('show') ? 'ヒントを隠す' : 'ヒントを見る';
+  });
+
+  // Enterキー（PCキーボード）
+  realInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') checkPassword();
+  });
+
+  // キラキラエフェクト
+  function createSparkles(x, y) {
+    const emojis = ['✨','⭐','💛','🌟','✦'];
+    for (let i = 0; i < 8; i++) {
+      const s = document.createElement('div');
+      s.className = 'sparkle';
+      s.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      const tx = (Math.random() - 0.5) * 120;
+      const ty = -(Math.random() * 80 + 20);
+      s.style.cssText = `left:${x}px;top:${y}px;--tx:${tx}px;--ty:${ty}px;animation-delay:${Math.random()*0.3}s;`;
+      document.body.appendChild(s);
+      setTimeout(() => s.remove(), 1500);
+    }
+  }
+
+  submitBtn.addEventListener('click', (e) => {
+    const rect = submitBtn.getBoundingClientRect();
+    createSparkles(rect.left + rect.width / 2, rect.top + rect.height / 2);
+    checkPassword();
+  });
+
+  function checkPassword() {
+    const val = realInput.value.trim();
+    if (val === CORRECT_PASSWORD) {
+      showSuccess();
+    } else {
+      maskDisplay.classList.add('error-state');
+      errorMsg.classList.add('show');
+      setTimeout(() => maskDisplay.classList.remove('error-state'), 500);
+    }
+  }
+
+  function showSuccess() {
+    loginScreen.style.display = 'none';
+    successScreen.classList.add('show');
+    for (let i = 0; i < 5; i++) {
+      setTimeout(() => {
+        createSparkles(Math.random() * window.innerWidth, Math.random() * window.innerHeight * 0.6);
+      }, i * 200);
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setupAudio();
+  }
+
+  // ===== 音声プレイヤー =====
+  let audio = null;
+  let isPlaying = false;
+
+  function setupAudio() {
+    audio = new Audio('mari_message.wav');
+
+    audio.addEventListener('timeupdate', () => {
+      if (audio.duration) {
+        document.getElementById('progressFill').style.width = (audio.currentTime / audio.duration * 100) + '%';
+        document.getElementById('audioTime').textContent = fmt(audio.currentTime) + ' / ' + fmt(audio.duration);
+      }
+    });
+
+    audio.addEventListener('ended', () => {
+      isPlaying = false;
+      document.getElementById('playBtn').textContent = '▶';
+      document.getElementById('progressFill').style.width = '0%';
+      audio.currentTime = 0;
+    });
+
+    audio.addEventListener('error', () => {
+      document.querySelector('.audio-note').textContent = '⚠️ テストのため音声ファイルなし。';
+    });
+
+    const playBtn = document.getElementById('playBtn');
+    playBtn.addEventListener('click', () => {
+      if (!audio) return;
+      if (isPlaying) {
+        audio.pause();
+        isPlaying = false;
+        playBtn.textContent = '▶';
+      } else {
+        audio.play().then(() => {
+          isPlaying = true;
+          playBtn.textContent = '⏸';
+        }).catch(() => {
+          document.querySelector('.audio-note').textContent = '⚠️ 再生できません。ブラウザの設定をご確認ください。';
+        });
+      }
+    });
+
+    // シークバー（タッチ対応）
+    const progressWrap = document.getElementById('progressWrap');
+    function seek(e) {
+      if (!audio || !audio.duration) return;
+      const rect = progressWrap.getBoundingClientRect();
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      audio.currentTime = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width)) * audio.duration;
+    }
+    progressWrap.addEventListener('click', seek);
+    progressWrap.addEventListener('touchstart', seek, { passive: true });
+  }
+
+  function fmt(sec) {
+    const m = Math.floor(sec / 60);
+    const s = Math.floor(sec % 60).toString().padStart(2, '0');
+    return `${m}:${s}`;
+  }
+</script>
+</body>
+</html>
