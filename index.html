@@ -620,7 +620,8 @@
         謎解きコンプリートおめでとう！<br>
         マリーズバースデーに来てくれて<br>
         本当にありがとう！<br><br>
-        マリーから、あなただけへの特別なメッセージを聴いてね♪
+        マリーから、あなただけへの特別なメッセージを聴いてね♪<br>
+        ※SNSへの投稿はお控えください。
       </p>
 
       <div class="deco-border" style="margin-bottom:1.5rem"></div>
@@ -790,7 +791,7 @@ toggleBtn.addEventListener('click', () => {
     });
 
     audio.addEventListener('error', () => {
-      document.querySelector('.audio-note').textContent = '⚠️ テストのため音声ファイルなし。';
+      document.querySelector('.audio-note').textContent = 'エラーが発生しました';
     });
 
     const playBtn = document.getElementById('playBtn');
